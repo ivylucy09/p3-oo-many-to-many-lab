@@ -120,7 +120,7 @@ def test_author_has_total_royalties():
 
 def test_contract_contracts_by_date():
     """Test Contract class has method contracts_by_date() that sorts all contracts by date"""
-    Contract.all = []
+    Contract.all_contracts = []
     author1 = Author("Name 1")
     book1 = Book("Title 1")
     book2 = Book("Title 2")
@@ -131,5 +131,5 @@ def test_contract_contracts_by_date():
     contract2 = Contract(author1, book2, "01/01/2001", 20)
     contract3 = Contract(author1, book3, "03/01/2001", 30)
     contract4 = Contract(author2, book4, "01/01/2001", 40)
-
+    
     assert Contract.contracts_by_date('01/01/2001') == [contract2, contract4]
